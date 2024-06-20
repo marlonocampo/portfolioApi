@@ -1,5 +1,5 @@
 import express from 'express'
-import { isDBServerUp, environment, APP_PORT } from './constant/config.js'
+import { initServerDB, environment, APP_PORT } from './constant/config.js'
 import { counterRoute } from './api/routes/counterRoute.js'
 import cors from 'cors'
 
@@ -9,7 +9,7 @@ async function startServer (): Promise<void> {
   console.log(`🔧 Environment: ${String(environment)}`)
 
   // check if the database server is up
-  await isDBServerUp()
+  await initServerDB()
 
   const app = express()
   // app.use(corsMiddlewares)
