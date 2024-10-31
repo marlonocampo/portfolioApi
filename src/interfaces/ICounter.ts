@@ -1,3 +1,7 @@
+import { Types } from 'mongoose'
+
 export interface ICounter {
-  saved: boolean
+  id: Types.ObjectId
+  date: Date
+  isCount: boolean
 }
