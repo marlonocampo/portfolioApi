@@ -4,9 +4,7 @@ import { IErrorResponse } from '../../interfaces/IErrorResponse.js'
 import { ICounterRepository } from './interfaces/ICounterRepository.js'
 
 export class CounterRepository implements ICounterRepository {
-  save: ({ isCount }: { isCount: boolean }) => Promise<ICounter | IErrorResponse>
-  getAll: () => Promise<number | IErrorResponse>
-  static async save ({ isCount }: { isCount: boolean }): Promise<ICounter | IErrorResponse> {
+  async save ({ isCount }: { isCount: boolean }): Promise<ICounter | IErrorResponse> {
     const counter = new CounterModel({
       date: new Date(),
       isCount
@@ -25,7 +23,7 @@ export class CounterRepository implements ICounterRepository {
     return response
   }
 
-  static async getAll (): Promise<number | IErrorResponse> {
+  async getAll (): Promise<number | IErrorResponse> {
     const response = await CounterModel.find({}) // get all documents thant are like in aument
       .where({ isCount: true })
       .then((response) => {
@@ -38,5 +36,10 @@ export class CounterRepository implements ICounterRepository {
       }
       )
     return response
+  }
+
+  async delete ({ id }: { id: number }): Promise<ICounter | IErrorResponse> {
+    id = id + 1
+    throw Error('Mehto not implement!')
   }
 }
