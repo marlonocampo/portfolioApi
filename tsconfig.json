@@ -3,7 +3,6 @@
     "target": "ESNext",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "rootDir": "./src",
     "outDir": "./dist",
     "esModuleInterop": true,
     "noUnusedParameters": true,
@@ -13,6 +12,8 @@
     "skipLibCheck": true,
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "eslint.config.ts",
+    "app.ts",
   ],
 }

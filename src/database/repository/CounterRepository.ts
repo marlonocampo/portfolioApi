@@ -40,6 +40,7 @@ export class CounterRepository implements ICounterRepository {
 
   async delete ({ id }: { id: number }): Promise<ICounter | IErrorResponse> {
     id = id + 1
-    throw Error('Mehto not implement!')
+    console.log('->🗑️ Deleting counter with id: ', id)
+    throw Error('Method not implement!')
   }
 }
