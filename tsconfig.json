@@ -14,6 +14,6 @@
   "include": [
     "src/**/*.ts",
     "eslint.config.ts",
-    "app.ts",
+    "server.ts"
   ],
 }
