@@ -11,7 +11,7 @@ export class Result<T> {
     return new Result<U>(true, code, value)
   }
 
-  static fail<U> (code: number, error: string): Result<U> {
-    return new Result<U>(false, code, undefined, error)
+  static fail<U> (code: number, error: string, value?: U): Result<U> {
+    return new Result<U>(false, code, value, error)
   }
 }

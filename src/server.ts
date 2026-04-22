@@ -12,7 +12,7 @@ async function startServer (): Promise<void> {
 
 
   app.listen(APP_PORT, () => {
-    console.log(`🚀🆗 Server is running on port ${String(APP_PORT)}`)
+    console.log(`🆗 Server is running on port ${String(APP_PORT)}`)
   })
 }
 

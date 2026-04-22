@@ -1,15 +1,16 @@
 import express from 'express'
-import cors from 'cors'
 import { appRoutes } from './appRoutes.js'
+import { corsMiddleware } from '../api/config/cors.js'
+import { authMiddleware } from '../api/middlewares/authMiddleware.js'
+import { authRoutes } from './routes/authRoutes.js'
 
 export function createApp () {
   const app = express()
   // app.use(corsMiddlewares)
   app.use(express.json())
-  app.use(cors({
-    // origin: 'http://localhost:3000'
-  }))
-  app.use('/api', appRoutes())
+  app.use(corsMiddleware())
+  app.use('/token', authRoutes())
+  app.use('/api', authMiddleware, appRoutes())
   
   return app
 }

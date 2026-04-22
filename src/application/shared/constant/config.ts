@@ -9,12 +9,11 @@ export async function initServerDB (): Promise<void> {
   const DB_URL_HOST = process.env.DB_URL_HOST ?? ''
   const PASSWORD_DB = process.env.PASSWORD_DB ?? ''
 
-  const connectionStringBd = DB_URL_HOST.replace('<password>', encodeURIComponent(PASSWORD_DB)) ?? ''
+  const connectionString = DB_URL_HOST.replace('<password>', encodeURIComponent(PASSWORD_DB)) ?? ''
   console.log(' -- 🔧 Trying to connect to database...')
-  console.log(` -- 🔧 Connection string: ${connectionStringBd}`)
 
   try {
-    const res = await mongoose.connect(connectionStringBd)
+    const res = await mongoose.connect(connectionString)
     if (res.connection.readyState === 1) {
       console.log('👍🏻Database connected!')
     }
