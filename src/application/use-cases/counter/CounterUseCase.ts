@@ -9,7 +9,7 @@ export class CounterUseCase implements CounterUseCaseContract {
   async getAll (): Promise<Result<Counter[]>> {
     try {
       const result = await this.repository.getAll()
-      return Result.ok<Counter[]>(0, result)
+      return Result.ok<Counter[]>(200, result)
     } catch (error: Error | any) {
       return Result.fail<Counter[]>(500, `Error: ${error.message}`)
     }
@@ -18,7 +18,7 @@ export class CounterUseCase implements CounterUseCaseContract {
   async saveLike (): Promise<Result<Counter>> {
     try {
       const result = await this.repository.save({ isCount: true })
-      return Result.ok<Counter>(0, result)
+      return Result.ok<Counter>(201, result)
     } catch (error: Error | any) {
       return Result.fail<Counter>(500, `Error: ${error.message}`)
     }
@@ -27,7 +27,7 @@ export class CounterUseCase implements CounterUseCaseContract {
   async saveDislike (): Promise<Result<Counter>> {
     try {
       const result = await this.repository.save({ isCount: false })
-      return Result.ok<Counter>(0, result)
+      return Result.ok<Counter>(201, result)
     } catch (error: Error | any) {
       return Result.fail<Counter>(500, `Error: ${error.message}`)
     }

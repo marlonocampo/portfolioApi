@@ -1,4 +1,4 @@
-import { initServerDB, environment, APP_PORT } from './application/shared/constant/config.js'
+import { initServerDB, environment, APP_PORT } from './infrastructure/database/config.js'
 import { createApp } from './infrastructure/server/app.js'
 
 async function startServer (): Promise<void> {
