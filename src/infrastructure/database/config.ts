@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 dotenv.config()
 
 export const environment: string = process.env.ENVIRONMENT ?? 'EnvironmetNoDefined'
-export const APP_PORT = Number(process.env.APP_PORT)
+export const APP_PORT = Number(process.env.PORT) || Number(process.env.APP_PORT)
 
 export async function initServerDB (): Promise<void> {
   const DB_URL_HOST = process.env.DB_URL_HOST ?? ''
