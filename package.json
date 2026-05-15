@@ -1,6 +1,7 @@
 {
   "name": "portfolio-api-marlonocampo",
   "version": "1.0.0",
+  "packageManager": "pnpm@9.0.0",
   "description": "Api Rest for web portfolio https://marlonocampo.com",
   "main": "src/server.ts",
   "type": "module",
@@ -29,7 +30,7 @@
     "@typescript-eslint/parser": "^8.54.0",
     "eslint": "^9.39.2",
     "jiti": "^2.6.1",
-    "typescript": "^5.4.5",
+    "typescript": "^5.9.3",
     "typescript-eslint": "^8.54.0"
   }
 }
