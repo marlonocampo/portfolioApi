@@ -1,4 +1,4 @@
-import { initServerDB, environment, APP_PORT } from './infrastructure/database/config.js'
+import { initServerDB, environment, APP_PORT } from './infrastructure/database/MongoDbConfig.js'
 import { createApp } from './infrastructure/server/app.js'
 
 async function startServer (): Promise<void> {
@@ -6,7 +6,7 @@ async function startServer (): Promise<void> {
   // configure environment variables
   console.log(`🔧 Environment: ${String(environment)}`)
 
-  // check if the database server is up
+  // check if the database server is running...
   await initServerDB()
   const app = createApp()
 
